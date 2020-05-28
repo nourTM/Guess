@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">خمن</string>
+    <string name="msg_fail">حاول مرة اخرى</string>
+    <string name="msg_win">ممتاز</string>
+    <string name="level">المستوى |</string>
+    <string name="level1">عظيم</string>
+    <string name="level2">رائع</string>
+    <string name="level3">تشجيع</string>
+    <string name="level4">مرح</string>
+    <string name="level5">جيد</string>
+    <string name="level6">تركيز</string>
+    <string name="level7">شمس</string>
+    <string name="finish">مبروك ☻ لقد انهيت اللعبة</string>
+</resources>

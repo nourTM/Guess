@@ -1,5 +1,6 @@
 package com.example.guess;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -16,8 +17,10 @@ public class MyDataBaseManager extends SQLiteOpenHelper {
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_STRING= "string";
 
-    public MyDataBaseManager(Context context) {
+    private Activity activity;
+    public MyDataBaseManager(Context context,Activity act) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        activity = act;
     }
 
     @Override
@@ -26,13 +29,13 @@ public class MyDataBaseManager extends SQLiteOpenHelper {
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_STRING + " varchar(10) NOT NULL);";
         db.execSQL(sql);
-        addLevel("Great",db);
-        addLevel("Perfect",db);
-        addLevel("Motivation",db);
-        addLevel("Fun",db);
-        addLevel("Well",db);
-        addLevel("Focus",db);
-        addLevel("Sun",db);
+        addLevel(activity.getString(R.string.level1),db);
+        addLevel(activity.getString(R.string.level2),db);
+        addLevel(activity.getString(R.string.level3),db);
+        addLevel(activity.getString(R.string.level4),db);
+        addLevel(activity.getString(R.string.level5),db);
+        addLevel(activity.getString(R.string.level6),db);
+        addLevel(activity.getString(R.string.level7),db);
     }
 
     @Override
@@ -52,8 +55,8 @@ public class MyDataBaseManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
     }*/
-    public List<String> getLevels() {
-        List<String> levels = new ArrayList<>();
+    public ArrayList<String> getLevels() {
+        ArrayList<String> levels = new ArrayList<>();
         String selectQuery = "SELECT * FROM "+TABLE_NAME+";";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(selectQuery, null);

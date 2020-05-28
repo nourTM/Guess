@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Guess</string>
+    <string name="msg_fail">Try Again</string>
+    <string name="msg_win">Good Job</string>
+    <string name="level">Level  |</string>
+    <string name="level1">Great</string>
+    <string name="level2">Perfect</string>
+    <string name="level3">Motivation</string>
+    <string name="level4">Fun</string>
+    <string name="level5">Well</string>
+    <string name="level6">Focus</string>
+    <string name="level7">Sun</string>
+    <string name="finish">Congrats ☻ you had finished the game</string>
 </resources>
